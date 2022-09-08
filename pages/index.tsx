@@ -3,6 +3,11 @@ import { FormEvent, useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import { io } from "socket.io-client"
 
+type ToDo = {
+  id: number;
+  text: string;
+  done: boolean;
+};
 
 const Home: NextPage = () => {
   
@@ -10,11 +15,12 @@ const Home: NextPage = () => {
   const [text, setText] = useState("");
   const [message, setMessage] = useState<string[]>([]);
   const [socket, setSocket] = useState(io('ws://localhost:3333'))
+  const [toDos, setTodos] = useState<ToDo[]>([])
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
     event.stopPropagation()
-    socket.emit("message", text)
+    socket.emit("add", text)
     setText("")
   }
 
@@ -22,17 +28,20 @@ const Home: NextPage = () => {
     socket.on("connect", () => {
       setState("connect")
     })
-    socket.on('message', args => {
-      setMessage([args, ...message])
-    });
+    socket.on("update", args => {
+      setTodos(args)
+    })
 
     return () => {
       socket.off("connect")
-      socket.off("message")
+      socket.off("update")
     }
-  }, [message])
+  }, [toDos])
 
 
+  const handleToggle = (id: number) => {
+    socket.emit("toggle", id)
+  }
 
 
   return (
@@ -44,9 +53,10 @@ const Home: NextPage = () => {
      </form>
      <ul>
         {
-          message.map((value, i) => (
-            <li key={i}>
-              {value}
+          toDos.map((todo) => (
+            <li key={todo.id}>
+              {todo.text}
+              <button onClick={() => handleToggle(todo.id)} >{todo.done?"done":"undone"}</button>
             </li>
           ))
         }
