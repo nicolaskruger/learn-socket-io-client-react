@@ -186,6 +186,11 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
+"@types/random-name@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@types/random-name/-/random-name-0.1.0.tgz#cd2a329c15850a067841f38f7939691eeec01bf4"
+  integrity sha512-QA0nl1t7RN1k5YeBH0jxyRD34MDJ9pW+fahEnPhWFNgFhiV5TJ8nm5+pR6NEev7z9SiWhZswnDPb9w0DP7N7bw==
+
 "@types/react-dom@18.0.6":
   version "18.0.6"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.6.tgz#36652900024842b74607a17786b6662dd1e103a1"
@@ -1450,6 +1455,11 @@ queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
+
+random-name@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/random-name/-/random-name-0.1.2.tgz#20a1ad0efce9976764c5dd3c418c7018b57e816d"
+  integrity sha512-3UHvhW50ZMbm6R11J3G1WeKvvys3GWE0uw5IxPzJjIxG+c0QoIbMlWfRKBlji9boEXPBx4CiSL3XWIkO9T/OVA==
 
 react-dom@18.2.0:
   version "18.2.0"

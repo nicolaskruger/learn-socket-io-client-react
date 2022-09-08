@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/random-name": "^0.1.0",
     "next": "12.2.5",
+    "random-name": "^0.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "socket.io-client": "^4.5.2"
